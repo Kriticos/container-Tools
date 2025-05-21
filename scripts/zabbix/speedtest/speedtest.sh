@@ -28,7 +28,7 @@ UPLOAD_MBPS=$(awk "BEGIN {print $UPLOAD * 8 / 1000000}")
 echo "Download: $DOWNLOAD_MBPS, Upload: $UPLOAD_MBPS, Latência: $LATENCY"
 zabbix_sender -z "$ZABBIX_SERVER" -s "$HOST" -k speedtest.download -o "$DOWNLOAD_MBPS"
 zabbix_sender -z "$ZABBIX_SERVER" -s "$HOST" -k speedtest.upload -o "$UPLOAD_MBPS"
-zabbix_sender -z "$ZABBIX_SERVER" -s "$HOST" -k speedtest.latency -o "$LATENCY"
+#zabbix_sender -z "$ZABBIX_SERVER" -s "$HOST" -k speedtest.latency -o "$LATENCY"
 zabbix_sender -z "$ZABBIX_SERVER" -s "$HOST" -k speedtest.latency_jitter -o "$LATENCY_JITTER"
 zabbix_sender -z "$ZABBIX_SERVER" -s "$HOST" -k speedtest.packet_loss -o "$PACKET_LOSS"
 zabbix_sender -z "$ZABBIX_SERVER" -s "$HOST" -k speedtest.download_ping -o "$DOWNLOAD_PING"

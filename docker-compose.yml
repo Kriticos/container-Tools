@@ -12,11 +12,11 @@ services:
       - ${LOCALTIME_FILE}:/etc/localtime:ro
       - ${TZ_FILE}:/etc/timezone:ro
     networks:
-      ${NETWORK_NAME}:
+      network-share:
         ipv4_address: ${CONTAINER_IP}
 
 networks:
-  ${NETWORK_NAME}:
+  network-share:
     external: true
     ipam:
       config:

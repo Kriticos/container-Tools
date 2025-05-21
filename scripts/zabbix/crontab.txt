@@ -1,0 +1,2 @@
+*/10 * * * * /bskp/scripts/zabbix/speedtest.sh  >> /tmp/speedtest.log 2>&1
+* * * * * /bskp/scripts/zabbix/check_connectivity_level.sh  >> /tmp/check_connectivity_level.log 2>&1

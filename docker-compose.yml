@@ -1,0 +1,23 @@
+services:
+  debian-tools:
+    container_name: ${SRV_NAME}
+    build: .
+    image: ${IMAGE_NAME}
+    restart: ${RESTART_POLICY}
+    tty: true
+    stdin_open: true
+    volumes:
+      - ${SCRIPTS_DIR}:/scripts
+      - ${CRON_DIR}:/etc/cron.d
+      - ${LOCALTIME_FILE}:/etc/localtime:ro
+      - ${TZ_FILE}:/etc/timezone:ro
+    networks:
+      ${NETWORK_NAME}:
+        ipv4_address: ${CONTAINER_IP}
+
+networks:
+  ${NETWORK_NAME}:
+    external: true
+    ipam:
+      config:
+        - subnet: ${SUBNET}

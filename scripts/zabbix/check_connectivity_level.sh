@@ -28,16 +28,6 @@ log_msg() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') [$level] $message"
 }
 
-# Verifica se as ferramentas necessárias estão instaladas
-check_tools() {
-    for tool in ping curl zabbix_sender; do
-        if ! command -v $tool &> /dev/null; then
-            log_msg "ERROR" "Ferramenta $tool não encontrada. Por favor, instale-a."
-            exit 1
-        fi
-    done
-}
-
 # Função para enviar dados para o Zabbix
 send_to_zabbix() {
     local level=$1

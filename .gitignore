@@ -1,2 +1,3 @@
 # Ignore todos os arquivos .env em qualquer pasta
 **/.env
+*.log
